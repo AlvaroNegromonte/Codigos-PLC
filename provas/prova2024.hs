@@ -8,6 +8,7 @@ rlencode00 :: [Int]->[Int]
 rlencode00 [] = []
 rlencode00 (0:nums) | temzero nums = 0: (1+ contaZeros nums) : rlencode00 (tirazeros nums) 
 rlencode00 (n:nums) = n:rlencode00 nums
+
 temzero :: [Int]-> Bool
 temzero [] = False
 temzero (a:as) = (a == 0)
@@ -34,3 +35,14 @@ repetez :: Int -> [Int]
 repetez 0 = []
 repetez 1 = [0]
 repetez n = 0 : repetez (n-1)
+
+
+rlencodeLetras :: String -> String
+rlencodeLetras [] = []
+rlencodeLetras (x:xs) = codifica x 1 xs
+    where
+        codifica c n [] = c : [intToDigit n | n>1]
+        codifica c n (y:ys)
+            | y == c && n < 9 = codifica c (n+1) ys
+rldecodeLetras :: String -> String
+
