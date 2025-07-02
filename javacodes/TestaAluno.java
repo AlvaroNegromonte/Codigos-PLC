@@ -1,4 +1,4 @@
-package aula02java;
+package javacodes;
 
 public class TestaAluno {
     public static void main(String[] args) {

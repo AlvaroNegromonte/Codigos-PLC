@@ -1,4 +1,4 @@
-package aula02java;
+package javacodes;
 
 public class Aluno {
     private String nome;

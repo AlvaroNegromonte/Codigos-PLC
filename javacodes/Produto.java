@@ -1,4 +1,4 @@
-package aula02java;
+package javacodes;
 
 public class Produto {       
     private String descricao;
