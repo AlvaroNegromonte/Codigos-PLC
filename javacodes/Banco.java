@@ -64,4 +64,12 @@ public class Banco {
         }
     }
 
+    public void renderBonus(String numero){
+        Conta c;
+        c = this.procurarConta(numero);
+        if(c instanceof ContaEspecial){
+            ((ContaEspecial) c).renderBonus();
+        }
+    }
+
 }
