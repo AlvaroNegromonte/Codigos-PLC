@@ -1,24 +1,21 @@
-
 import java.util.*;
 
 public class Hamburgueria {
     private double precoHamburguer;
     private double precoBatata;
     private double precoRefri;
-    private double bonusVIP;
     private Map<String, Cliente> clientes;
 
-    public Hamburgueria(double precoHamburguer, double precoBatata, double precoRefri, double bonusVIP) {
+    public Hamburgueria(double precoHamburguer, double precoBatata, double precoRefri) {
         this.precoHamburguer = precoHamburguer;
         this.precoBatata = precoBatata;
         this.precoRefri = precoRefri;
-        this.bonusVIP = bonusVIP;
         this.clientes = new HashMap<>();
     }
 
     public void adicionarCliente(String nome, boolean vip) {
         if (vip) {
-            clientes.put(nome, new ClienteVIP(nome, bonusVIP));
+            clientes.put(nome, new ClienteVIP(nome, 10)); // valor fixo do bônus
         } else {
             clientes.put(nome, new ClienteNormal(nome));
         }
@@ -44,10 +41,9 @@ public class Hamburgueria {
         List<Cliente> ranking = new ArrayList<>(clientes.values());
         Collections.sort(ranking);
 
-        System.out.println("🏆 Top 10 Clientes:");
+        System.out.println("Top 10 Clientes:");
         for (int i = 0; i < Math.min(10, ranking.size()); i++) {
             System.out.println((i + 1) + ". " + ranking.get(i));
         }
     }
 }
-

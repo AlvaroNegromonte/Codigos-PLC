@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        Hamburgueria sistema = new Hamburgueria(20.0, 8.0, 5.0, 0.5);
+        Hamburgueria sistema = new Hamburgueria(20.0, 8.0, 5.0);
 
         sistema.adicionarCliente("João", true);    
         sistema.adicionarCliente("Maria", false);  

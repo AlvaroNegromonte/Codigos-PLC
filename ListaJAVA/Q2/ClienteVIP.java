@@ -15,7 +15,7 @@ public class ClienteVIP extends Cliente {
     public boolean isVIP() {
         return true;
     }
-
+   //lógica do bonus: 1 + bonus faz sentido, haverá aumento na pontuação
     public void adicionarPontosComBonus(int pontosBase) {
         int pontosBonus = (int) Math.ceil((1 + bonus) * pontosBase);
         this.pontos += pontosBonus;
